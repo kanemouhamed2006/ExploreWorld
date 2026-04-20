@@ -1,0 +1,172 @@
+{
+  "project": {
+    "name": "ExploreWorld",
+    "version": "1.0.0",
+    "description": "A clean, modern, animated travel website showcasing 10 global destinations",
+    "output": "index.html",
+    "buildDate": "2026-04-20",
+    "buildTool": "Claude Code (claude-sonnet-4-6)"
+  },
+  "files": {
+    "index.html": {
+      "path": "./index.html",
+      "lines": 1615,
+      "sizeBytes": 54688,
+      "sizeKB": "53.4 KB",
+      "type": "Single-file application (HTML + CSS + JS)"
+    }
+  },
+  "dependencies": {
+    "external": [
+      {
+        "name": "Google Fonts — Poppins",
+        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800",
+        "purpose": "Headings and display text"
+      },
+      {
+        "name": "Google Fonts — Open Sans",
+        "url": "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600",
+        "purpose": "Body and UI text"
+      },
+      {
+        "name": "Unsplash",
+        "url": "https://unsplash.com",
+        "purpose": "High-quality travel photography (CDN-hosted)"
+      }
+    ],
+    "frameworks": [],
+    "buildTools": []
+  },
+  "architecture": {
+    "structure": "Single index.html — no build step, no server required",
+    "css": "Embedded in <style> block — ~500 lines",
+    "javascript": "Inline <script> at bottom of <body> — ~250 lines",
+    "html": "Linear section order with semantic markup"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "label": "Hero",
+      "description": "Full-screen parallax background with fade-in animation, badge, headline, subtitle, and CTA button"
+    },
+    {
+      "id": "stats",
+      "label": "Stats Bar",
+      "description": "Animated counters: 10 destinations, 50,000+ travelers, 98% satisfaction, 7 years experience"
+    },
+    {
+      "id": "destinations",
+      "label": "Destinations Grid",
+      "description": "10 country cards with images, flags, descriptions, hover zoom, and click-to-modal interaction",
+      "countries": [
+        "France 🇫🇷", "Senegal 🇸🇳", "Spain 🇪🇸", "Italy 🇮🇹", "USA 🇺🇸",
+        "Brazil 🇧🇷", "Japan 🇯🇵", "Morocco 🇲🇦", "Canada 🇨🇦", "United Arab Emirates 🇦🇪"
+      ]
+    },
+    {
+      "id": "featured",
+      "label": "Featured Destinations",
+      "description": "Large full-height cards for France, Senegal, Spain with slide-in animation",
+      "featured": ["France", "Senegal", "Spain"]
+    },
+    {
+      "id": "gallery",
+      "label": "Travel Gallery",
+      "description": "8-image masonry grid with hover zoom overlay and click-to-lightbox",
+      "imageCount": 8
+    },
+    {
+      "id": "testimonials",
+      "label": "Testimonials Slider",
+      "description": "4-card auto-playing carousel with dot indicators and prev/next controls",
+      "reviewCount": 4
+    },
+    {
+      "id": "contact",
+      "label": "Footer / Contact",
+      "description": "Newsletter subscribe form, destination quick links, company links, social icons"
+    }
+  ],
+  "features": {
+    "animations": [
+      "Hero fade-in on page load (CSS keyframe)",
+      "Parallax scroll effect on hero background",
+      "Scroll-reveal with IntersectionObserver (.reveal, .reveal-l, .reveal-r)",
+      "Staggered card reveal via transition-delay",
+      "Animated number counters on stats bar",
+      "Hover zoom on destination cards, featured cards, and gallery images",
+      "Card lift on hover (translateY + box-shadow)",
+      "Spring modal open animation (cubic-bezier bounce)",
+      "Lightbox scale-in animation",
+      "Testimonial slider smooth transition",
+      "Slider dot active state morphing (width transition)",
+      "Button hover lift with enhanced shadow",
+      "Social icon hover lift",
+      "Footer link hover indent transition"
+    ],
+    "interactions": [
+      "Sticky navbar — transparent over hero, frosted-glass after scroll",
+      "Mobile hamburger menu",
+      "Destination card click → country detail modal",
+      "Featured card click → country detail modal",
+      "Gallery image click → fullscreen lightbox",
+      "Lightbox: click outside or × to close",
+      "Modal: click outside or × to close",
+      "Testimonial prev/next buttons",
+      "Testimonial dot navigation",
+      "Auto-playing testimonial slider (4.5s interval, resets on manual interaction)",
+      "Newsletter subscribe with success feedback",
+      "Smooth scroll navigation from nav links",
+      "Keyboard: Escape closes modal and lightbox",
+      "Image onerror fallback to placeholder"
+    ],
+    "responsive": {
+      "breakpoints": ["1100px", "768px", "480px"],
+      "mobile": "Single-column layout, hamburger nav, simplified gallery grid"
+    },
+    "accessibility": [
+      "ARIA roles on modal and lightbox (role=dialog, aria-modal)",
+      "aria-label on icon buttons",
+      "Semantic HTML5 elements (nav, section, footer)",
+      "Alt text on all images",
+      "Keyboard Escape support for overlays"
+    ]
+  },
+  "design": {
+    "colorPalette": {
+      "primary": "#ffffff",
+      "secondary": "#f5f5f5",
+      "accentBlue": "#00aaff",
+      "accentGreen": "#2ecc71",
+      "text": "#222222",
+      "textMuted": "#666666",
+      "footerBg": "#0c1c30"
+    },
+    "typography": {
+      "headings": "Poppins (weights: 300, 400, 600, 700, 800)",
+      "body": "Open Sans (weights: 400, 500, 600)"
+    },
+    "borderRadius": {
+      "default": "16px",
+      "small": "8px",
+      "pill": "50px"
+    }
+  },
+  "performance": {
+    "lazyLoading": "All non-hero images use loading='lazy'",
+    "imageFormat": "Unsplash CDN with width and quality parameters (e.g. ?w=600&q=80)",
+    "fontLoading": "Google Fonts with preconnect hints",
+    "animations": "CSS transforms only (no layout-triggering properties), passive scroll listeners",
+    "noFrameworks": true,
+    "noBuildStep": true
+  },
+  "summary": {
+    "totalSections": 7,
+    "totalCountries": 10,
+    "totalGalleryImages": 8,
+    "totalTestimonials": 4,
+    "totalAnimationTypes": 15,
+    "totalInteractions": 15,
+    "status": "complete"
+  }
+}
